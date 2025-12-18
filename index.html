@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>solusiAnda.id</title>
+
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+:root{
+  --blue:#2563eb;
+  --red:#ef4444;
+  --gray:#9ca3af;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --text:#0f172a;
+  --muted:#64748b;
+  --border:#e5e7eb;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto;
+  background:var(--bg);
+  color:var(--text);
+}
+a{text-decoration:none;color:inherit}
+.container{max-width:1200px;margin:auto;padding:20px}
+
+/* BRAND */
+.brand-text{font-weight:900}
+.brand-text .solusi{color:var(--blue)}
+.brand-text .anda{color:var(--red)}
+.brand-text .dotid{color:var(--gray)}
+
+/* NAV */
+.nav{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:10;
+}
+.nav-inner{
+  display:flex;align-items:center;justify-content:space-between;
+}
+.brand{
+  display:flex;align-items:center;gap:12px;
+}
+.logo-img{
+  width:42px;height:42px;border-radius:12px;
+  object-fit:cover;
+  box-shadow:0 6px 16px rgba(0,0,0,.18);
+}
+.nav a{font-weight:700;color:var(--muted);margin-left:18px}
+
+/* HERO */
+.hero{
+  background:
+    radial-gradient(900px 350px at 10% 20%, rgba(37,99,235,.35), transparent 60%),
+    radial-gradient(900px 350px at 90% 30%, rgba(239,68,68,.30), transparent 60%),
+    linear-gradient(135deg,#0f172a,#020617);
+  color:#fff;
+  padding:90px 20px 80px;
+  text-align:center;
+}
+.hero h1{margin:0;font-size:48px}
+.hero p{margin-top:14px;font-size:18px;color:#e5e7eb}
+
+/* FILTER */
+.filter-bar{
+  display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px
+}
+.filter-bar input{
+  flex:1;padding:12px;border-radius:10px;
+  border:1px solid var(--border);
+}
+.filter-btn{
+  padding:10px 14px;border-radius:10px;
+  border:1px solid var(--border);
+  background:#fff;font-weight:800;cursor:pointer
+}
+.filter-btn.active{
+  background:linear-gradient(135deg,var(--blue),var(--red));
+  color:#fff;border:none
+}
+
+/* GRID */
+.market-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:20px;
+}
+
+/* CARD */
+.market-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+.market-thumb{
+  height:150px;
+  background:linear-gradient(135deg,#dbeafe,#fee2e2);
+  display:grid;place-items:center;
+  font-weight:900;
+}
+.market-body{padding:14px;flex:1}
+.market-title{font-weight:900}
+.market-meta{font-size:12px;color:var(--muted)}
+
+/* FOOTER CARD */
+.market-footer{
+  padding:12px 14px;
+  border-top:1px solid var(--border);
+  position:relative;
+}
+.price{
+  font-weight:900;
+}
+
+/* SMALL ORDER BUTTON */
+.btn.order{
+  position:absolute;
+  right:12px;
+  bottom:10px;
+  padding:6px 12px;
+  font-size:11px;
+  border-radius:999px;
+  border:none;
+  background:linear-gradient(135deg,var(--blue),var(--red));
+  color:#fff;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* ORDER SECTION */
+.order-section{
+  margin-top:70px;
+  padding:80px 20px;
+  background:
+    radial-gradient(700px 300px at 20% 20%, rgba(37,99,235,.20), transparent 60%),
+    radial-gradient(700px 300px at 80% 30%, rgba(239,68,68,.20), transparent 60%),
+    linear-gradient(135deg,#f8fafc,#eef2ff);
+}
+.order{
+  max-width:900px;
+  margin:auto;
+  background:#fff;
+  border-radius:18px;
+  box-shadow:0 30px 60px rgba(0,0,0,.15);
+  padding:30px;
+}
+form{display:grid;gap:12px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:720px){
+  .two{grid-template-columns:1fr}
+  .hero h1{font-size:36px}
+}
+input,select,textarea{
+  padding:12px;border-radius:10px;
+  border:1px solid var(--border);
+}
+textarea{min-height:100px}
+
+/* FOOTER */
+.footer{
+  margin-top:60px;
+  padding:30px 0;
+  border-top:1px solid var(--border);
+  text-align:center;
+}
+.social{
+  display:flex;justify-content:center;gap:18px;margin-bottom:10px
+}
+.social a{
+  width:44px;height:44px;border-radius:50%;
+  display:grid;place-items:center;
+  border:1px solid var(--border);
+  font-size:20px;
+}
+.social a:hover{
+  background:linear-gradient(135deg,var(--blue),var(--red));
+  color:#fff;
+}
+
+/* FLOAT WA */
+.wa{
+  position:fixed;right:16px;bottom:16px;
+  padding:14px 18px;border-radius:999px;
+  border:none;
+  background:linear-gradient(135deg,var(--blue),var(--red));
+  color:#fff;font-weight:900;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <div class="container nav-inner">
+    <div class="brand">
+      <img src="img/logo.jpg" class="logo-img">
+      <div class="brand-text">
+        <span class="solusi">solusi</span><span class="anda">Anda</span><span class="dotid">.id</span>
+      </div>
+    </div>
+    <div>
+      <a href="#layanan">Layanan</a>
+      <a href="#order">Order</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+  <h1 class="brand-text">
+    <span class="solusi">solusi</span><span class="anda">Anda</span><span class="dotid">.id</span>
+  </h1>
+  <p>Marketplace Jasa Pengerjaan Projek</p>
+</div>
+
+<!-- FILTER -->
+<div class="container">
+  <div class="filter-bar">
+    <input id="search" placeholder="Cari layanan...">
+    <button class="filter-btn active" data-filter="all">Semua</button>
+    <button class="filter-btn" data-filter="akademik">Akademik</button>
+    <button class="filter-btn" data-filter="desain">Desain</button>
+    <button class="filter-btn" data-filter="web">Web</button>
+  </div>
+</div>
+
+<!-- MARKET (5 CARD TETAP) -->
+<div class="container" id="layanan">
+  <div class="market-grid">
+
+    <div class="market-card" data-category="akademik">
+      <div class="market-thumb">Joki Makalah</div>
+      <div class="market-body">
+        <div class="market-title">Joki Makalah Akademik</div>
+        <div class="market-meta">★★★★★</div>
+      </div>
+      <div class="market-footer">
+        <span class="price">Rp 40K+</span>
+        <button class="btn order" onclick="pick('Joki Makalah')">Order</button>
+      </div>
+    </div>
+
+    <div class="market-card" data-category="akademik">
+      <div class="market-thumb">Joki Jurnal</div>
+      <div class="market-body">
+        <div class="market-title">Joki Jurnal Ilmiah</div>
+        <div class="market-meta">★★★★★</div>
+      </div>
+      <div class="market-footer">
+        <span class="price">Rp 100K+</span>
+        <button class="btn order" onclick="pick('Joki Jurnal')">Order</button>
+      </div>
+    </div>
+
+    <div class="market-card" data-category="desain">
+      <div class="market-thumb">PowerPoint</div>
+      <div class="market-body">
+        <div class="market-title">Desain PowerPoint</div>
+        <div class="market-meta">★★★★★</div>
+      </div>
+      <div class="market-footer">
+        <span class="price">Rp 30K+</span>
+        <button class="btn order" onclick="pick('Desain PowerPoint')">Order</button>
+      </div>
+    </div>
+
+    <div class="market-card" data-category="desain">
+      <div class="market-thumb">Pamflet</div>
+      <div class="market-body">
+        <div class="market-title">Desain Pamflet / Poster</div>
+        <div class="market-meta">★★★★★</div>
+      </div>
+      <div class="market-footer">
+        <span class="price">Rp 30K+</span>
+        <button class="btn order" onclick="pick('Desain Pamflet')">Order</button>
+      </div>
+    </div>
+
+    <div class="market-card" data-category="web">
+      <div class="market-thumb">Website</div>
+      <div class="market-body">
+        <div class="market-title">Desain Website</div>
+        <div class="market-meta">★★★★★</div>
+      </div>
+      <div class="market-footer">
+        <span class="price">Rp 350K+</span>
+        <button class="btn order" onclick="pick('Desain Website')">Order</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ORDER SECTION -->
+<div class="order-section" id="order">
+  <div class="order">
+    <h2>Order Sekarang</h2>
+    <form id="form">
+      <div class="two">
+        <input id="nama" placeholder="Nama" required>
+        <input id="wa" placeholder="WhatsApp" required>
+      </div>
+      <select id="layanan" required>
+        <option value="">Pilih layanan</option>
+        <option>Joki Makalah</option>
+        <option>Joki Jurnal</option>
+        <option>Desain PowerPoint</option>
+        <option>Desain Pamflet</option>
+        <option>Desain Website</option>
+      </select>
+      <textarea id="detail" placeholder="Detail singkat" required></textarea>
+      <button class="btn order">Kirim ke WhatsApp</button>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="social">
+    <a href="https://wa.me/6281944872700" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/solusi_anda.id?igsh=MTJpZjFnN2xobnRu" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <small>© 2025 solusiAnda.id</small>
+</div>
+
+<script>
+const ADMIN_WA_NUMBER="6281944872700";
+
+function chat(){
+  window.open(`https://wa.me/${ADMIN_WA_NUMBER}`,"_blank");
+}
+function pick(val){
+  document.getElementById("layanan").value=val;
+  location.href="#order";
+}
+document.getElementById("form").onsubmit=e=>{
+  e.preventDefault();
+  const msg=`Order solusiAnda.id
+Nama: ${nama.value}
+WA: ${wa.value}
+Layanan: ${layanan.value}
+Detail: ${detail.value}`;
+  window.open(`https://wa.me/${ADMIN_WA_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank");
+};
+
+/* FILTER + SEARCH */
+const search=document.getElementById("search");
+const buttons=document.querySelectorAll(".filter-btn");
+const cards=document.querySelectorAll(".market-card");
+
+function filter(){
+  const q=search.value.toLowerCase();
+  const f=document.querySelector(".filter-btn.active").dataset.filter;
+  cards.forEach(c=>{
+    c.style.display =
+      c.innerText.toLowerCase().includes(q) &&
+      (f==="all"||c.dataset.category===f)
+      ? "flex":"none";
+  });
+}
+search.oninput=filter;
+buttons.forEach(b=>b.onclick=()=>{
+  buttons.forEach(x=>x.classList.remove("active"));
+  b.classList.add("active"); filter();
+});
+</script>
+
+</body>
+</html>
